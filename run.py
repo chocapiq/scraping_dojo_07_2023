@@ -23,7 +23,7 @@ class WebScraper(Variables):
         :return: List of all data found within <script> tag
         """
 
-        response = requests.get(self.input_url)  # , proxies={'http': PROXY})
+        response = requests.get(self.input_url)
         launch_page = response.text
         soup = BeautifulSoup(launch_page, "html.parser")
         return soup.find_all("script")
